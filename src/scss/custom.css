@@ -1,0 +1,235 @@
+.icon-button {
+  padding-bottom: 0px !important;
+  padding-top: 4px !important;
+  color: var(--cor-principal) !important;
+  border: none !important;
+  background: none !important;
+  text-transform: none !important;
+  padding: 0px !important;
+}
+
+.icon-button:hover .fa-icon {
+  display: none;
+}
+
+.fa-icon {
+  transition: color 0.1s ease-in-out !important;
+}
+
+.icon-button:hover .fa-icon-hover {
+  display: initial;
+}
+
+.fa-icon-hover {
+  display: none;
+}
+
+.icon-button:hover .fa-icon-color-red {
+  color: red;
+}
+
+.fa-icon-color-red {
+  transition: color 0s ease-in-out !important;
+}
+
+.icon-button:hover .fa-icon-color-green {
+  color: green;
+}
+
+.fa-icon-color-green {
+  transition: color 0s ease-in-out !important;
+}
+
+.label-input-form {
+  font-weight: normal;
+  font-size: 14px;
+}
+
+.line-check {
+  background-color: green;
+  color: white;
+  height: 27px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition-duration: .2s;
+}
+
+.table-header {
+  z-index: 1;
+  padding: 6px;
+}
+
+.div-button {
+  padding-left: 5px;
+  padding-right: 5px;
+  min-width: 50px;
+  max-width: 71px;
+}
+
+.fa-icon-button {
+  font-size: large;
+  display: flow-root;
+  width: 100%;
+  margin-bottom: 3px
+}
+
+.text-button {
+  font-size: 9px;
+  white-space: pre-line;
+  line-height: 1.2em;
+  display: inline-block
+}
+
+.modal-actions-div {
+  display: flex;
+  justify-content: space-between;
+  background-color: #f2f3f8;
+  border-bottom-left-radius: var(--bs-modal-inner-border-radius);
+  border-bottom-right-radius: var(--bs-modal-inner-border-radius);
+  border-top: 1px solid #e5e5e5
+}
+
+.height-definition-timesheet {
+  /* max-height: calc(100vh - 73px); */
+  min-height: 220px;
+}
+
+.height-definition-timesheet .infinite-scroll-component__outerdiv {
+  height: 100% !important;
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group .form-select {
+  padding: 10px;
+  padding-bottom: 0px;
+  font-size: var(--default-font-size);
+  width: 100%;
+  line-height: 1.3;
+}
+
+.form-group .form-select {
+  padding: 8px 15px;
+}
+
+.form-group label {
+  position: absolute;
+  top: 17px;
+  left: 10px;
+  transform: translateY(-50%);
+  font-size: var(--default-font-size);
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus+label,
+.form-group textarea:focus+label,
+.form-group .form-select:focus+label,
+.form-group input:not(:focus):not(:placeholder-shown):not(:required)+label,
+.form-group textarea:not(:focus):not(:placeholder-shown):not(:required)+label,
+.form-group .form-select:not(:focus):not(:placeholder-shown):not(:required)+label,
+.form-group .selected {
+  top: 10px !important;
+  font-size: var(--default-font-size);
+  font-weight: 600;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder,
+.form-group .form-select::placeholder {
+  color: transparent;
+}
+
+.form-group input:focus::placeholder,
+.form-group textarea:focus::placeholder,
+.form-group .form-select:focus::placeholder {
+  color: inherit;
+  opacity: 0.5;
+}
+
+.form-group input:not(:placeholder-shown)+label,
+.form-group textarea:not(:placeholder-shown)+label,
+.form-group .form-select:not(:placeholder-shown)+label {
+  top: 10px;
+  font-size: var(--default-font-size);
+}
+
+.form-group textarea:focus,
+.form-group textarea:not(:focus) {
+  padding-top: 15px;
+}
+
+.form-group .form-select:not(:focus)+.label-input-form {
+  top: 50%;
+  font-size: var(--default-font-size);
+  transform: translateY(-50%);
+  width: 80%;
+  background-color: #EEEEEE;
+}
+
+.form-group .form-select:not(:focus)+.label-input-form.enabled {
+  background-color: #fff
+}
+
+.form-group select:valid,
+.form-group .form-select:focus {
+  padding-top: 15px;
+  padding-bottom: 1px;
+  padding-left: 10px;
+}
+
+.form-group.timesheet {
+  margin-bottom: 5px;
+}
+
+.form-group.timesheet input {
+  margin-bottom: 0px;
+}
+
+.form-select:disabled {
+  background-color: #EEEEEE !important;
+}
+
+.list-tags.visible {
+  display: flex;
+}
+
+.list-tags.hidden {
+  display: none;
+}
+
+.show-filters-button.visible {
+  display: flex;
+}
+
+.dropdown-menu .focused {
+  background-color: #f1f1f1;
+}
+
+.select-items {
+  width: 100%;
+  flex: 1;
+}
+
+.inner-class-select__control {
+  border-radius: 0px !important;
+  min-height: unset !important;
+}
+
+.inner-class-select__value-container {
+  padding: 0px 8px !important;
+}
+
+.inner-class-select__indicator {
+  padding: unset !important;
+}
+
+.inner-class-select__menu {
+  z-index: 99 !important;
+}
