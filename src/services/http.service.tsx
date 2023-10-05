@@ -31,32 +31,12 @@ HttpService.interceptors.request.use((config) => {
 
 HttpService.interceptors.response.use(
   function (response) {
-    (response.data.messages || []).forEach((resultMessage: any) => {
-      if (resultMessage.message) {
-        resultMessage.message = resultMessage.message.replaceAll("P0001: ", "");
-        switch (resultMessage.type) {
-          case 0:
-          case "ERROR":
-            ToastService.error(resultMessage.message);
-            break;
-          case 1:
-          case "WARNING":
-            ToastService.warn(resultMessage.message, null);
-            break;
-          case 2:
-          case "INFO":
-            ToastService.info(resultMessage.message, null);
-            break;
-          case 3:
-          case "SUCCESS":
-            ToastService.success(resultMessage.message);
-            break;
-          default:
-            ToastService.info(resultMessage.message, null);
-            break;
-        }
+    const result: any = response.data;
+    if (result) {
+      if(!result.success){
+        ToastService.error(result.error)
       }
-    });
+    }
     if (response.data.redirectRoute) {
       setTimeout(() => {
         window.location.reload();
@@ -74,8 +54,8 @@ HttpService.interceptors.response.use(
         ToastService.info("Seu login expirou", null);
         // navigate("/Login");
       }
-    } else if (error.response?.data?.error?.Message) {
-      ToastService.error(error.response?.data?.error.Message);
+    } else if (error.response?.data?.error) {
+      ToastService.error(error.response?.data?.error);
 
       // if (showError) {
       //   showError = false;
