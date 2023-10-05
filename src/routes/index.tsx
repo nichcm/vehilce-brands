@@ -12,39 +12,33 @@ const SystemRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<Login />} />
-      <Route path="/Home" element={<PrivateRoute component={Home} />} />
+      <Route path="/Home" element={(
+                  <>
+                      <ProtectedRoute>
+                          <Home />
+                      </ProtectedRoute>
+                  </>
+              )} />
 
       <Route path="*" element={<Navigate to="/Login" />} />
     </Routes>
   );
 };
 
-// const PrivateRoute : any= ({...rest }) => {
-//   const authentication = useSelector(
-//     (state: StoreModel) => state.authentication
-//   );
-//   const navigate = useNavigate();
+interface IPrivateProps {
+  children: any;
+}
 
-//   if (authentication?.accessToken) {
-//     return  {...rest};
-//   } else {
-//     navigate("/Login", { state: { from: rest.location }, replace: true });
-//     return null;
-//   }
-// };
-
-const PrivateRoute: React.FC<{ component: React.FC }> = ({ component: Component, ...rest }) => {
+const ProtectedRoute = ({ children }: IPrivateProps) => {
   const authentication = useSelector((state: StoreModel) => state.authentication);
   const navigate = useNavigate();
-
-  if (authentication?.accessToken) {
-    return <Route {...rest} element={<Component />} />;
-  } else {
-    navigate('/Login', { state: { from: rest }, replace: true });
-    return <Navigate to="/Login" />;
+  if (!authentication?.accessToken) {
+    navigate('/Login');
+    return <Navigate to="/" replace />;
   }
+  
+  return children;
 };
-
 
 
 export default SystemRoutes;
