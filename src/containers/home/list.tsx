@@ -24,8 +24,9 @@ const Home = () => {
 
   return (
     <Container>
-      <h1>Dados de Marcas</h1>
-
+      <Row>
+        <h1>Dados Mestres</h1>
+      </Row>
       <Row className="mb-3">
         <Col>
           <Button variant="primary" onClick={() => setShowModal(true)}>
