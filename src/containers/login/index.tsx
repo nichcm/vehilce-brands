@@ -23,7 +23,7 @@ const Login = () => {
       const response = await AuthService.login(user);
       if(response.success && response.result?.accessToken){
         handleDispatchLogin(response);
-          navigate("/");
+          navigate("/Home");
       }
       
     } catch (error) {

@@ -3,7 +3,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Routes, Route, Navigate, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-import NotFound from "../containers/notFound";
 import Login from "../containers/login/index";
 
 import { StoreModel } from "../models/store.model";
@@ -12,11 +11,10 @@ import Home from "../containers/home/list";
 const SystemRoutes = () => {
   return (
     <Routes>
-      <Route path="/404" element={<NotFound />} />
-      <Route path="/Login" element={<Login />} />
+      <Route path="/" element={<Login />} />
       <Route path="/Home" element={<PrivateRoute component={Home} />} />
 
-      <Route path="*" element={<Navigate to="/404" />} />
+      <Route path="*" element={<Navigate to="/Login" />} />
     </Routes>
   );
 };
